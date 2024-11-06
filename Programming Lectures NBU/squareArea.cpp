@@ -3,6 +3,6 @@ using namespace std;
 
 int main(){
 
-cout<<<<endl;
+cout<<55<<endl;
 return 0;
 }
