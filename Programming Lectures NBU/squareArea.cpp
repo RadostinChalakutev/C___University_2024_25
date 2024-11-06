@@ -2,7 +2,9 @@
 using namespace std;
 
 int main(){
-
-cout<<55<<endl;
+    double a;
+    cin>>a;
+    double area=a*a;
+    cout<<area<<endl;
 return 0;
 }
