@@ -12,6 +12,7 @@ int main() {
 
 
 
+
     for (int i = 1; i <=x && i<=y && i<=z; ++i) {
         if (x%i==0 && y%i==0 && z%i==0) {
             gcd = i;
