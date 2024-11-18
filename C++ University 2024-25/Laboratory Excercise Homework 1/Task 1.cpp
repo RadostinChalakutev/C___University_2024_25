@@ -18,7 +18,7 @@ int main() {
         y/=x;
     }
 
-        cout<<result;
+    cout<<result;
 
     return 0;
 }
