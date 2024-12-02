@@ -8,7 +8,7 @@ int main()
     float tekushtaOcenka;
 
     int broiOcenki = 0;
-    float suma = 0;
+    float suma;
 
 
     do {
