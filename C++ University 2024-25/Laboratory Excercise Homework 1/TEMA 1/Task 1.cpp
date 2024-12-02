@@ -9,7 +9,7 @@ int main() {
     cin>>y;
     if(x<2||x>16||y<1||y>100) {
         cout<<"Invalid input data!"<<endl;
-        return 0;
+        
     }
     const string digits="0123456789ABCDEF";
     string result="";
