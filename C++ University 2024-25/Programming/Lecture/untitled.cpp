@@ -3,10 +3,10 @@ using namespace std;
 
 
 int main() {
-    int beep = 1;
+   int far;
+   cin>>far;
 
-    do {
-        beep++;
-        cout<<1<<endl;
-    }while (true);
+
+
+    return 0;
 }
