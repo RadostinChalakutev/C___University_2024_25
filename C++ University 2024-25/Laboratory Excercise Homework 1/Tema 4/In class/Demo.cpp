@@ -1,28 +1,26 @@
 #include <iostream>
-
+#include <string.h>
 
 using namespace std;
 
 int main() {
-    char id[11];
-    int id_numbers[10];
-    int i=0;
-    cin>>id;
-    int length=0;
-    bool isValid=true;
 
-    while (id[length]!='\0') {
-        length++;
+    int *id = new int[10];
+    cin >> id;
+    char id_numbers[10];
 
-    }
-    if (length!=10) {
-        cout<<"Invalid input data!"<<endl;
+    bool isValid = true;
+    string length=id;
+
+    if (length.length()!=10) {
+        cout<<"Invalid input data"<<endl;
         return 0;
     }
-    while (i<10) {
-        id_numbers[i]=id[i]-'0';
-        i++;
+
+    for (int i = 0; i < 10; i++) {
+        id_numbers[i] = id[i];
     }
+
 
     int year = id_numbers[0] * 10 + id_numbers[1];
     int month = id_numbers[2] * 10 + id_numbers[3];
