@@ -1,6 +1,6 @@
 #include "functions.h"
 #include <iostream>
-#include <math.h>
+
 #include <valarray>
 #include <vector>
 using namespace std;
