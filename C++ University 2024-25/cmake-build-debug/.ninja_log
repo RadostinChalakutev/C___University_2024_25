@@ -1,0 +1,23 @@
+# ninja log v6
+1721	2781	7538040327920923	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Demo.cpp.obj	7bdc1425af98acab
+1567	2909	7538040326385040	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/7/assertFunction.cpp.obj	4fcaf6e4c2e76545
+19	1606	7538040310896458	CMakeFiles/C___University_2024_25.dir/main.cpp.obj	a0cab63b5793ef9a
+586	688	7526930222177581	C___University_2024_25.exe	d350ce2d5e0c95ee
+36	1502	7538040311066005	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/Time.cpp.obj	da43bddf1c53ef4
+32	1523	7538040311026112	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/coins2.cpp.obj	1f0f16f85b4f6399
+43	1854	7538040311145787	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/futureValue1.cpp.obj	1deb7ca13b1b83de
+28	1567	7538040310986216	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/coins1.cpp.obj	f4e8046bf65b445d
+1606	2841	7538040326773999	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Product2.cpp.obj	da4c96658fc77a48
+18	836	7538043870722418	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Demo1.cpp.obj	e5f83606c4f22c2a
+37	1576	7542765782837757	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/coins2.cpp.obj	1f0f16f85b4f6399
+50	1765	7542765782967408	CMakeFiles/C___University_2024_25.dir/Laboratory_Excercise_Homework_1/TEMA_1/Task_1.cpp.obj	683ca2f00a51060b
+29	1799	7542765782748016	CMakeFiles/C___University_2024_25.dir/main.cpp.obj	a0cab63b5793ef9a
+34	1812	7542765782797857	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/coins1.cpp.obj	f4e8046bf65b445d
+42	2109	7542765782877649	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/Time.cpp.obj	da43bddf1c53ef4
+46	2245	7542765782917540	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/futureValue1.cpp.obj	1deb7ca13b1b83de
+1765	2983	7542765800111567	CMakeFiles/C___University_2024_25.dir/Laboratory_Excercise_Homework_1/TEMA_1/Task_3.cpp.obj	519aa7ea0820bbf0
+1576	3040	7542765798226600	CMakeFiles/C___University_2024_25.dir/Laboratory_Excercise_Homework_1/TEMA_1/Task_2.cpp.obj	6ba65d76c20c0bdc
+1812	3259	7542765800580311	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Product2.cpp.obj	da4c96658fc77a48
+1799	3321	7542765800450666	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/7/assertFunction.cpp.obj	4fcaf6e4c2e76545
+2109	3360	7542765803542396	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Demo.cpp.obj	7bdc1425af98acab
+2245	3398	7542765804918705	CMakeFiles/C___University_2024_25.dir/Programming/Lecture/8/Demo1.cpp.obj	e5f83606c4f22c2a
