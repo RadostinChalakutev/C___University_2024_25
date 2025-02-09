@@ -10,8 +10,7 @@ using namespace std;
    @param high the high end of the range
    @return a vector of positions of values in the given range
 */
-vector<int> find_all_between(vector<double> v,
-   double low, double high)
+vector<int> find_all_between(vector<double> v,double low, double high)
 {
     vector<int> pos;
     for (int i = 0; i < v.size(); i++)
@@ -32,9 +31,9 @@ int main()
     salaries[4] = 51500.0;
 
     vector<int> matches
-       = find_all_between(salaries, 45000.0, 65000.0);
+       = find_all_between(salaries, 10000, 35000);
 
     for (int j = 0; j < matches.size(); j++)
-        cout << salaries[matches[j]] << "\n";
+        cout << matches[j] << " ";
     return 0;
 }

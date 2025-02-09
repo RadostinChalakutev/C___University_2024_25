@@ -69,5 +69,6 @@ int main()
     {  if (i == best_index) cout << "best value => ";
         products[i].print();
     }
+    products.pop_back();
     return 0;
 }

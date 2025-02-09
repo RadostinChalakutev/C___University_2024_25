@@ -44,5 +44,7 @@ int main()
     {  double y = squareroot(x);
         cout << "squareroot of " << x << " = " << y << "\n";
     }
+    cout<<approx_equal(1.0,1.00001)<<endl;
+
     return 0;
 }
