@@ -1,16 +1,18 @@
 #include <iostream>
 using namespace std;
 
-class Time{
-   public:
-       int h;
-       int m;
-       int s;
-    };
+class Time {
+public:
+    Time();
+    Time(int h, int m, int s);
+    void add_seconds(long s);
 
-
-int main() {
-
-
-
-}
+    long seconds_from(Time t) const;
+    int get_seconds() const;
+    int get_minutes() const;
+    int get_hours() const;
+private:
+    int hours;   /* conjecture */
+    int minutes; /* conjecture */
+    int seconds; /* conjecture */
+};
