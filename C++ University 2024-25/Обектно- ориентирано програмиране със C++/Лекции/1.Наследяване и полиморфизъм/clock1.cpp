@@ -2,7 +2,40 @@
 #include <iomanip>
 #include <string>
 using namespace std;
-#include "time.h"
+
+
+
+class Time {
+public:
+    Time();
+    int getHour() const;
+    int getMinute() const;
+    int getSecond() const;
+private:
+    int hour;
+    int minute;
+    int second;
+};
+
+Time::Time() {
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    hour = ltm->tm_hour;
+    minute = ltm->tm_min;
+    second = ltm->tm_sec;
+}
+
+int Time::getHour() const {
+    return hour;
+}
+
+int Time::getMinute() const {
+    return minute;
+}
+
+int Time::getSecond() const {
+    return second;
+}
 
 class Clock {
 public:
@@ -40,6 +73,7 @@ bool Clock::isMilitary() const {
     return military;
 
 }
+
 int main() {
     Clock clock1(true);
     Clock clock2(false);
@@ -47,14 +81,14 @@ int main() {
     bool more = true;
     while (more)
     { cout << "Military time: "
-           << clock1.get_hours() << ":"
+           << clock1.getHour()<< ":"
            << setw(2) << setfill('0')
-           << clock1.get_minutes()
+           << clock1.getMinute()
            << setfill(' ') << "\n";
         cout << "am/pm time: "
-             << clock2.get_hours() << ":"
+             << clock2.getHour() << ":"
              << setw(2) << setfill('0')
-             << clock2.get_minutes()
+             << clock2.getMinute()
              << setfill(' ') << "\n";
 
         cout << "Try again? (y/n) ";
