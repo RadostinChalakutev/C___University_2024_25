@@ -1,25 +1,33 @@
+#include <iomanip>
 #include <iostream>
 using namespace std;
 
 int main(){
+
+    AGAIN:
     cout<<"Set value of degree(1 for Celsius, 2 for Fahrenheit):"<<endl;
-    char value;
+    int value;
     cin>>value;
-  cout<<"Enter value:"<<endl;
-   double degrees;
-   cin>>degrees;
-   double celsius;
-   double fahrenheit;
-  celsius=degrees*1.8+32;
-  fahrenheit=(degrees-32)/1.8;
-   if(value=='1'){
-
-     cout<<celsius<<"C -> "<<fahrenheit<<"F"<<endl;
-   }else if(value=='2'){
-     cout<<fahrenheit<<"F -> "<<celsius<<"C"<<endl;
-   }else{
-     cout<<"Invalid Input"<<endl;
-  }
 
 
+    if (value==1) {
+        cout<<"Enter value:"<<endl;
+        double degree;
+        cin>>degree;
+        double farhrenheit=(degree*1.8)+32;
+        cout<<setprecision(2);
+        cout<<degree<<" C->"<<farhrenheit<<" F"<<endl;
+    }else if (value==2) {
+        cout<<"Enter value:"<<endl;
+        double degree;
+        cin>>degree;
+        double celsius=(degree-32)/1.8;
+
+       cout<< setprecision(2);
+        cout<<degree<<" F->"<<celsius<<" C"<<endl;
+    }else {
+        cout<<"Invalid data output!"<<endl;
+        goto AGAIN;
+    }
+    return 0;
 }
