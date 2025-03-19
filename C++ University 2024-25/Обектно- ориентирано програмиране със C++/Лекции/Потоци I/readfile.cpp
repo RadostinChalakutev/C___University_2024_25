@@ -1,6 +1,6 @@
 #include <string>
 #include <iostream>
-#include <fstream>
+#include <ifstream>
 using namespace std;
 
 int main()
