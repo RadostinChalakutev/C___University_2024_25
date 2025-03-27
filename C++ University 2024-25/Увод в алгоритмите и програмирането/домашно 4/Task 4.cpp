@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+
 int main(){
 
   int Sum=0;
@@ -9,7 +10,7 @@ int main(){
 
     Sum=Sum+(counter*counter);
     if(counter%100==0){
-      cout<<"Sum after "<<counter<<"iterations:"<<Sum<<endl;
+      cout<<"Sum after "<<counter<<" iterations:"<<Sum<<endl;
     }
   }
 
