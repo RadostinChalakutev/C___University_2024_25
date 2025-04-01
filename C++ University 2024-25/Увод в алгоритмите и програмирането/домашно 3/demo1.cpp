@@ -1,19 +1,20 @@
 #include <iostream>
 using namespace std;
 
+class B{
+  public:
+    void bf();
+    int ob;
+
+};
+
+class D:public B{
+  public:
+    void df();
+
+    };
+
+
 int main(){
-
-  int i=1;
-
-  Start:
-  i=i+1;
-
-  if(i>0){
-    goto Start;
-  }
-  cout<<"Oh, no. It's full! i="<<i<<endl;
-
-   return 0;
+  B::df()
 }
-
-

@@ -1,20 +1,13 @@
 #include <iostream>
-#include <fstream>
-
 using namespace std;
 
-int main() {
-  fstream myFile;
-  string fileName;
-  cin>>fileName;
-  myFile.open(fileName,ios::out);
-  int counter=0;
+int main(){
+  public std::ifstream fin;
+  std::ostream fout;
+    fstream f;
+  int k=42;
+  double x=1.1;
+  char ch='N';
+  string s="absa";
 
-  if (myFile.is_open()) {
-      while (counter>=5) {
-        myFile<<"Hello"<<endl;
-        counter++;
-      }
-    }
-    myFile.close();
-  }
+}
