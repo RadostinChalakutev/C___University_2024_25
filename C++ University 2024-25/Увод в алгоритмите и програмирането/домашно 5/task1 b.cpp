@@ -7,7 +7,7 @@ int main() {
     int znak = -1;
     int i = 1;
     double prevVal = 0.0;
-    int end = 0.0001;
+    double  end = 0.0001;
 
     while (fabs(PIsum - prevVal) >= end) {
         prevVal = PIsum;
@@ -15,5 +15,7 @@ int main() {
         znak = -znak;
         i++;
     }
-    return 0;
+    PIsum=PIsum*4;
+
+
 }
