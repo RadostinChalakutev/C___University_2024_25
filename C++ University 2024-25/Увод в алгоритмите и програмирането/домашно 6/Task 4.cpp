@@ -1,98 +1,91 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include <chrono>
 #include <cstdlib>
-#include <ctime>
 
-
-using namespace std;
-
-const int REPEAT = 100;
-
-
-bool linearSearchFull(const int arr[], int size, int x) {
+// 1. Search whole array
+bool searchWholeArray(const std::vector<int>& array, int value) {
     bool found = false;
-    for (int i = 0; i < size; ++i) {
-        if (arr[i] == x) found = true;
+    for (int element : array) {
+        if (element == value) {
+            found = true;
+        }
     }
     return found;
 }
 
-
-bool linearSearchAnchor(const int arr[], int size, int x) {
-    for (int i = 0; i < size; ++i) {
-        if (arr[i] == x) return true;
+// 2. Anchor search (with early exit)
+bool anchorSearch(const std::vector<int>& array, int value) {
+    for (int element : array) {
+        if (element == value) {
+            return true;
+        }
     }
     return false;
 }
 
-
-bool binarySearch(const int arr[], int size, int x) {
-    int left = 0, right = size - 1;
+// 3. Binary search
+bool binarySearch(const std::vector<int>& array, int value) {
+    int left = 0, right = array.size() - 1;
     while (left <= right) {
-        int mid = (left + right) / 2;
-        if (arr[mid] == x) return true;
-        else if (x < arr[mid]) right = mid - 1;
-        else left = mid + 1;
+        int middle = (left + right) / 2;
+        if (array[middle] == value) {
+            return true;
+        }
+        if (array[middle] < value) {
+            left = middle + 1;
+        } else {
+            right = middle - 1;
+        }
     }
     return false;
+}
+
+// Template for measuring time
+template <typename Func>
+double measureSearchTime(Func searchFunction, const std::vector<int>& array, const std::vector<int>& values) {
+    auto start = std::chrono::high_resolution_clock::now();
+    for (int i = 0; i < 100; ++i) {
+        for (int value : values) {
+            searchFunction(array, value);
+        }
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsed = end - start;
+    return elapsed.count();
 }
 
 int main() {
-
-    srand(time(0));
-    int targets[5];
-    cout << "Enter 5 values to search: ";
-    for (int i = 0; i < 5; ++i) {
-        cin >> targets[i];
+    std::vector<int> sizes = {100, 200, 300, 400, 500, 600, 700, 800, 900, 1000};
+    std::vector<int> searchValues(5);
+    std::cout << "Enter 5 values to search (between 1 and 1000): ";
+    for (int& value : searchValues) {
+        std::cin >> value;
     }
 
-    cout << "\nSize\tLinearFull\tAnchor\t\tBinary\n";
-    for (int size = 100; size <= 1000; size += 100) {
-
-        int* randArray = new int[size];
+    for (int size : sizes) {
+        // Generate random array
+        std::vector<int> randomArray(size);
         for (int i = 0; i < size; ++i) {
-            randArray[i] = rand() % 200 + 1;
+            randomArray[i] = rand() % 1000 + 1;
         }
 
+        // Create a sorted copy for binary search
+        std::vector<int> sortedArray = randomArray;
+        std::sort(sortedArray.begin(), sortedArray.end());
 
-        int* sortedArray = new int[size];
-        for (int i = 0; i < size; ++i) {
-            sortedArray[i] = i + 1;
-        }
+        // Measure search times
+        double wholeArrayTime = measureSearchTime(searchWholeArray, randomArray, searchValues);
+        double anchorSearchTime = measureSearchTime(anchorSearch, randomArray, searchValues);
+        double binarySearchTime = measureSearchTime(binarySearch, sortedArray, searchValues);
 
-
-        clock_t t1 = clock();
-        for (int rep = 0; rep < REPEAT; ++rep) {
-            for (int i = 0; i < 5; ++i)
-                linearSearchFull(randArray, size, targets[i]);
-        }
-        clock_t t2 = clock();
-
-
-        clock_t t3 = clock();
-        for (int rep = 0; rep < REPEAT; ++rep) {
-            for (int i = 0; i < 5; ++i)
-                linearSearchAnchor(randArray, size, targets[i]);
-        }
-        clock_t t4 = clock();
-
-
-        clock_t t5 = clock();
-        for (int rep = 0; rep < REPEAT; ++rep) {
-            for (int i = 0; i < 5; ++i)
-                binarySearch(sortedArray, size, targets[i]);
-        }
-        clock_t t6 = clock();
-
-
-        double timeFull = double(t2 - t1) / CLOCKS_PER_SEC;
-        double timeAnchor = double(t4 - t3) / CLOCKS_PER_SEC;
-        double timeBinary = double(t6 - t5) / CLOCKS_PER_SEC;
-
-
-        cout << size << "\t" << timeFull << "\t\t" << timeAnchor << "\t\t" << timeBinary << endl;
-
-        delete[] randArray;
-        delete[] sortedArray;
+        // Print results
+        std::cout << "Array size: " << size << std::endl;
+        std::cout << "Whole array search: " << wholeArrayTime << " seconds" << std::endl;
+        std::cout << "Anchor search:       " << anchorSearchTime << " seconds" << std::endl;
+        std::cout << "Binary search:       " << binarySearchTime << " seconds" << std::endl;
+        std::cout << "-----------------------------" << std::endl;
     }
 
     return 0;
