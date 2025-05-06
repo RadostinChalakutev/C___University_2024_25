@@ -2,7 +2,6 @@
 using namespace std;
 
 typedef long long ll;
-//insertion sort нареден масив
 
 ll insertionSort(int A[], int n) {
     ll comparisons = 0;
@@ -24,10 +23,10 @@ int main() {
         int n = sizes[s];
         int* A = new int[n];
         for (int i = 0; i < n; i++)
-            A[i] = i;
+            A[i] = i;  // нареден масив
 
         ll comps = insertionSort(A, n);
-        cout << "Size: " << n << ", comparison: " << comps << endl;
+        cout << ": " << n << ", : " << comps << endl;
 
         delete[] A;
     }
