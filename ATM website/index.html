@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Онлайн Банкомат</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <h1>Онлайн Банкомат</h1>
+</header>
+
+<main>
+    <section class="login-form">
+        <h2>Вход в акаунт</h2>
+        <form id="loginForm">
+            <label for="username">Потребителско име:</label>
+            <input type="text" id="username" name="username" required />
+            <button type="submit">Вход</button>
+        </form>
+        <p id="welcome"></p>
+    </section>
+
+    <section class="account-form">
+        <h2>Извършване на Трансакция</h2>
+        <form id="transferForm">
+            <label for="from">От сметка:</label>
+            <input type="text" id="from" name="from" required />
+
+            <label for="to">Към сметка:</label>
+            <input type="text" id="to" name="to" required />
+
+            <label for="amount">Сума:</label>
+            <input type="number" id="amount" name="amount" min="0.01" step="0.01" required />
+
+            <button type="submit">Изпрати</button>
+        </form>
+    </section>
+
+    <section class="output">
+        <h2>Вашата сметка</h2>
+        <pre id="output"></pre>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Онлайн Банкомат Система</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
