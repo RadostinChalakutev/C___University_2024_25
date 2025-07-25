@@ -1,0 +1,3 @@
+G:/CLionProjects/ATM website/cmake-build-debug/CMakeFiles/ATM_website.dir
+G:/CLionProjects/ATM website/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/CLionProjects/ATM website/cmake-build-debug/CMakeFiles/rebuild_cache.dir

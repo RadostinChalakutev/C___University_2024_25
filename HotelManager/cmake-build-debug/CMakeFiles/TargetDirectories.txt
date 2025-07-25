@@ -1,0 +1,3 @@
+G:/CLionProjects/HotelManager/cmake-build-debug/CMakeFiles/HotelManager.dir
+G:/CLionProjects/HotelManager/cmake-build-debug/CMakeFiles/edit_cache.dir
+G:/CLionProjects/HotelManager/cmake-build-debug/CMakeFiles/rebuild_cache.dir

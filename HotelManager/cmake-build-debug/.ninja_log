@@ -1,0 +1,16 @@
+# ninja log v6
+21	1179	7751600518693161	CMakeFiles/HotelManager.dir/main.cpp.obj	73cd829a72e06e65
+1305	1535	7751600531525824	HotelManager.exe	cd10f1faf9a30710
+14	387	7751601019704763	build.ninja	52e9ea6477adf446
+30	1106	7751600518782544	CMakeFiles/HotelManager.dir/Room.cpp.obj	b37be8fbd996fd33
+24	1111	7751600518712732	CMakeFiles/HotelManager.dir/Person.cpp.obj	7a58c0c63d52712f
+36	1305	7751600518842385	CMakeFiles/HotelManager.dir/HotelManager.cpp.obj	3c1833e987b04671
+27	1122	7751600518742653	CMakeFiles/HotelManager.dir/Guest.cpp.obj	64ff6f25694b19c1
+33	1144	7751600518812467	CMakeFiles/HotelManager.dir/Reservation.cpp.obj	eafd4dff6888fef4
+6	840	7751602572393196	CMakeFiles/HotelManager.dir/Guest.cpp.obj	64ff6f25694b19c1
+33	1039	7751602572668667	CMakeFiles/HotelManager.dir/HotelManager.cpp.obj	3c1833e987b04671
+1040	1203	7751602582732503	HotelManager.exe	cd10f1faf9a30710
+5	853	7751605309335611	CMakeFiles/HotelManager.dir/main.cpp.obj	73cd829a72e06e65
+853	1008	7751605317810137	HotelManager.exe	cd10f1faf9a30710
+7	1018	7751614805221342	CMakeFiles/HotelManager.dir/main.cpp.obj	73cd829a72e06e65
+1019	1197	7751614815340123	HotelManager.exe	cd10f1faf9a30710

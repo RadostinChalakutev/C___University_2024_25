@@ -1,0 +1,3 @@
+C:/Users/rados/CLionProjects/C++ University 2024/25/cmake-build-debug/CMakeFiles/25.dir
+C:/Users/rados/CLionProjects/C++ University 2024/25/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/rados/CLionProjects/C++ University 2024/25/cmake-build-debug/CMakeFiles/rebuild_cache.dir
