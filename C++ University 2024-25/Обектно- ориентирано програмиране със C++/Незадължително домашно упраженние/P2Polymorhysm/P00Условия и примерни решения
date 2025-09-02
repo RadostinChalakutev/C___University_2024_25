@@ -1,0 +1,385 @@
+Задача 1: Създайте проста йерархия от
+класове с
+ форми: базов клас, наречен Shape, и
+ производни класове, наречени Circle,
+ Square и Triangle. В базовия клас направете
+  виртуална функция, наречена draw(), и я
+   заменете в производните класове. Направете
+    масив от указатели към Shape обекти и
+    извикайте draw() през указателите на
+    базовия клас, за да проверите поведението
+     на виртуалната функция.
+
+#include <iostream>
+
+using namespace std;
+
+class Shape {
+
+public:
+
+    Shape();
+
+    virtual void draw();
+
+};
+
+
+
+class Circle : public Shape {
+
+public:
+
+    void draw();
+
+};
+
+
+
+class Square : public Shape {
+
+public:
+
+    void draw();
+
+};
+
+
+
+class Triangle : public Shape {
+
+public:
+
+    void draw();
+
+};
+
+
+
+int main() {
+
+     Shape *shapes[4];
+
+     shapes[0] = new Shape();
+
+     shapes[1] = new Circle();
+
+     shapes[2] = new Square();
+
+     shapes[3] = new Triangle();
+
+
+
+     for (int i = 0; i < 4 ; i++) {
+
+         shapes[i]->draw();
+
+     }
+
+
+
+
+
+    return 0;
+
+}
+
+
+
+Shape::Shape() {
+
+    cout << "construct";
+
+}
+
+void Shape::draw() {
+
+    cout << "Drowing shape" << endl;
+
+}
+
+
+
+void Circle::draw() {
+
+    cout << "Drawing a circle" << endl;
+
+}
+
+
+
+void Square::draw() {
+
+    cout << "Drawing a square" << endl;
+
+}
+
+
+
+void Triangle::draw() {
+
+    cout << "Drawing a triangle" << endl;
+
+}
+
+Задача 2. Нека напишем програма с която да помогнем за организирането на служителите в една компания. В компанията имаме 4 вида типа служители:  служител, мениджър, инженер и изследовател. За всички служители следва да се поддържат данни за име, фамилия и заплата.  в която дефинираме базов клас служител и производни класове мениджър, инженер и изследовател. Тъй като мениджърите основно ходят на срещи и излизат в отпуск за тях се поддържат данни за броя срещи, които имат и брой дни платен отпуск. Основни атрибути на инженерите са ниво на владеене на  С++ от 0 до 10000, години опит и специалност напр. „Електроника“.  За изследователя следва да имаме данни за име на университета в който е получил докторската си степен и темата на дисертацията.
+
+Нека реализираме програмата с базов клас Employee, производни класове Manager, Engineer, Researcher. Всеки от класовете да има член-данни и член-функции за съответните атрибути описани по-горе. Нека в базовият клас Employee имаме виртуална функция Print. Функцията следва да има различна функционалност във всеки от класовете, разпечатвайки на екран данните съхранени в даденият клас.
+
+Нека потребителят да въвежда броя на всички служители, и след това броя на мениджърите, инженерите и изследователите. Базирано на въведените бройки да се създават динамично обекти от всеки производен клас с различни стойности на данните за всеки обект .  Например мениджърите може да се казват Manage ManaginN, да имат заплата 1000 и 25 дни отпуск, инженерите да имат заплата равна на броят им умножен по 500 и всеки да  има познания по C++ 3000.
+
+
+
+#include<iostream>
+#include <string>
+#include <typeinfo>
+using namespace std;
+class Employee {
+protected:
+string firstname;
+string surname;
+float salary;
+public:
+Employee() { salary = 0; };
+Employee(string firstname, string surname, float salary);
+string get_name();
+void set_name(string firstname, string surname);
+float get_salary();
+void set_salary(float salary);
+virtual void Print();
+
+
+};
+
+class Manager : public Employee {
+
+unsigned int num_of_meetings;
+unsigned int num_of_holidays;
+public:
+Manager() { num_of_meetings = 5; num_of_holidays = 25; };
+Manager(string firstname, string surname, float salary, unsigned int num_of_meetings, unsigned int num_of_holidays);
+unsigned int get_get_num_of_meetings();
+void set_num_of_meetings(unsigned int num_of_meetings);
+unsigned int get_get_num_of_holidays();
+void set_num_of_holidays(unsigned int num_of_holidays);
+void Print();
+
+};
+class Engineer : public Employee {
+float cppknowladge;
+unsigned int years;
+string type;
+public:
+Engineer() { years = 0; cppknowladge = 0; };
+Engineer(string firstname, string surname, float salary, float cppknowladge, unsigned int years, string type);
+float get_cppknowladge();
+void set_cppknowladge(float cppknowladge);
+unsigned get_years();
+void set_years(unsigned years);
+string get_type();
+void set_type(string type);
+void Print();
+};
+class Researcher : public Employee {
+string university;
+string thesis;
+public:
+Researcher() {};
+Researcher(string firstname, string surname, float salary, string university, string thesis);
+string get_university();
+void set_university(string university);
+string get_thesis();
+void set_thesis(string thesis);
+void Print();
+};
+int main() {
+Employee** employees;
+unsigned num_of_employees, num_of_managers, num_of_engineers, num_of_researchers;
+bool flag = true;
+unsigned counter;
+while (flag) {
+cout << "How many employees you have? \n";
+cin >> num_of_employees;
+if (num_of_employees) {
+cout << "How many managers you have?\n";
+cin >> num_of_managers;
+if (num_of_managers < num_of_employees) {
+cout << "How many engineers you have?\n";
+cin >> num_of_engineers;
+if ((num_of_engineers + num_of_managers) < num_of_employees) {
+cout << "How many researches you have?\n";
+cin >> num_of_researchers;
+if ((num_of_engineers + num_of_managers + num_of_researchers) < num_of_employees) {
+flag = false;
+continue;
+}
+}
+}
+cout << "Number of managers, engineers and researches should be less then total number of employees." << endl;
+continue;
+}
+cout << "Number of employeers cannot be zero." << endl;
+}
+employees = new Employee*[num_of_employees];
+for (counter = 0; counter < num_of_managers; counter++) {
+employees[counter] = new Manager("Manager", "Managin", 1000.0f, counter + 2, 25);
+}
+for (; counter < (num_of_managers + num_of_engineers); counter++) {
+employees[counter] = new Engineer("Engi", "Engineer", float(counter) * 900.0f, float(counter) * 800, counter, "Electrical");
+}
+for (; counter < (num_of_managers + num_of_engineers + num_of_researchers); counter++) {
+employees[counter] = new Researcher("Rese", "Researcher", 850.0f, "University of Maryland", "Cosmic candy production");
+}
+for (; counter < num_of_employees; counter++) {
+employees[counter] = new Employee("Empy", "Employee", float(counter) * 10.0f);
+}
+for (unsigned n = 0; n < num_of_employees; n++) {
+employees[n]->Print();
+}
+for (unsigned n = 0; n < num_of_employees; n++) {
+delete employees[n];
+}
+delete[] employees;
+system("PAUSE");
+}
+
+Employee::Employee(string firstname, string surname, float salary)
+{
+this->firstname = firstname;
+this->surname = surname;
+this->salary = salary;
+}
+
+string Employee::get_name()
+{
+return firstname + " " + surname;
+}
+
+void Employee::set_name(string firstname, string surname)
+{
+this->firstname = firstname;
+this->surname = surname;
+}
+
+float Employee::get_salary()
+{
+return salary;
+}
+
+void Employee::set_salary(float salary)
+{
+this->salary = salary;
+}
+
+void Employee::Print()
+{
+cout << "Employee: " << get_name() << " with salary of " << salary << endl;
+}
+
+Manager::Manager(string firstname, string surname, float salary, unsigned int num_of_meetings, unsigned int num_of_holidays) : Employee(firstname, surname, salary)
+{
+this->num_of_meetings = num_of_meetings;
+this->num_of_holidays = num_of_holidays;
+}
+
+unsigned int Manager::get_get_num_of_meetings()
+{
+return num_of_meetings;
+}
+
+void Manager::set_num_of_meetings(unsigned int num_of_meetings)
+{
+this->num_of_meetings = num_of_meetings;
+}
+
+unsigned int Manager::get_get_num_of_holidays()
+{
+return num_of_meetings;
+}
+
+void Manager::set_num_of_holidays(unsigned int num_of_holidays)
+{
+this->num_of_holidays = num_of_holidays;
+}
+
+void Manager::Print()
+{
+Employee::Print();
+cout << "Role manager with " << num_of_meetings << " meetings per week and " << num_of_holidays << " holidays per year." << endl;
+}
+
+Engineer::Engineer(string firstname, string surname, float salary, float cppknowladge, unsigned int years, string type) : Employee(firstname, surname, salary)
+{
+this->cppknowladge = cppknowladge;
+this->years = years;
+this->type = type;
+}
+
+float Engineer::get_cppknowladge()
+{
+return cppknowladge;
+}
+
+void Engineer::set_cppknowladge(float cppknowladge)
+{
+this->cppknowladge = cppknowladge;
+}
+
+unsigned Engineer::get_years()
+{
+return years;
+}
+
+void Engineer::set_years(unsigned years)
+{
+this->years = years;
+}
+
+string Engineer::get_type()
+{
+return type;
+}
+
+void Engineer::set_type(string type)
+{
+this->type = type;
+}
+
+void Engineer::Print()
+{
+Employee::Print();
+cout << "Role is " << type << " engineer with " << cppknowladge << " out of 10000 knowladge of C++, " << years << " years of experiencе. " << endl;
+}
+
+Researcher::Researcher(string firstname, string surname, float salary, string university, string thesis) : Employee(firstname, surname, salary)
+{
+this->university = university;
+this->thesis = thesis;
+}
+
+string Researcher::get_university()
+{
+return university;
+}
+
+void Researcher::set_university(string university)
+{
+this->university = university;
+}
+
+string Researcher::get_thesis()
+{
+return this->thesis;
+}
+
+void Researcher::set_thesis(string thesis)
+{
+this->thesis = thesis;
+}
+
+void Researcher::Print()
+{
+Employee::Print();
+cout << "Role is researcher with PhD at " << university << " on \"" << thesis << "\" thesis." << endl;
+
+}
