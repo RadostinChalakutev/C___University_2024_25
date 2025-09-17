@@ -1,118 +1,94 @@
 #include <iostream>
+#include <typeinfo>
+#include <string>
 using namespace std;
 
-class Employee{
-  protected:
+
+
+class Employee {
+protected:
     string firstName;
     string lastName;
-    double salary;
+    float salary;
+
     public:
-      Employee(){salary = 0;};
-      Employee(string firstName, string lastName, double salary);
-        string get_name();
-        void set_name(string firstName, string lastName);
-
-        double getSalary();
-        void setSalary(double salary);
-
-        virtual void Print();
-
- };
 
 
+    Employee(){salary=0;};
+    Employee(string firstName, string lastName, float salary);
+    string getName();
+    void setName(string firstName, string lastName);
+    float getSalary();
+    void setSalary(float salary);
+    virtual void Print();
 
-  class Manager:public Employee{
+};
 
-        int numberOfMeetings;
-        int paidLeaving;
+class Manager :  Employee {
 
-        public:
-          Manager(){numberOfMeetings = 0;paidLeaving = 0;};
-          Manager(string firstName, string lastName, double salary);
-          int getNumberOfMeetings();
+  unsigned int  num_of_meeting;
+    unsigned int days_off;
+public:
+    Manager(){num_of_meeting=5;days_off=3;};
+    Manager(unsigned int num_of_meeting, unsigned int days_off);
+    int getNumOfMeeting();
+    void setNumOfMeeting(unsigned int num_of_meeting);
+    int getDaysOff();
+    void setDaysOff(unsigned int days_off);
+    void Print();
 
-          void setNumberOfMeetings(int numberOfMeetings);
+};
 
-          int getPaidLeaving();
+class Engineer:  Employee {
+    int level;
+    int experience;
+    string degree;
 
-          void setPaidLeaving(int paidLeaving);
+public:
+    Engineer() {
+        level=1500;
+        experience=2;
+        degree="Information technology";
 
-          void Print();
+    };
+    Engineer (int level,int experence, string degree);
+    int getLevel();
+    void setLevel(int level);
+    int getExperience();
+    void setExperience(int experience);
+    string getDegree();
+    void setDegree(string degree);
+    void Print();
 
-  };
-  class Engineers: public Employee{
+};
 
-      int levelOfQuality; //ниво на владеене на С++
-      int yearsExperience;
-      string degree; //специалност
-  public:
-      Engineers(){levelOfQuality=5;yearsExperience=0;degree="IT";};
-      Engineers(string firstName, string lastName, double salary);
-      int getLevelOfQuality();
-      void setLevelOfQuality(int levelOfQuality);
-      int getYearsExperience();
-      void setYearsExperience(int yearsExperience);
-      string getDegree();
-      void setDegree(string degree);
-      void Print();
-  };
+class Researcher:  Employee {
+    string universtiy_name;
+    string dissertation;
+public:
+    Researcher() {
+        universtiy_name="NBU";
+        dissertation="Information technology";
+    };
+    Researcher(string university_name, string dissertation);
+    string getUniversityName();
+    void setUniversityName(string university_name);
+    string getDissertation();
+    void setDissertation(string dissertation);
+    void Print() ;
+};
 
-  class Researchers: public Employee{
+int main() {
+    Employee** employees;
+    int num_of_employees, num_of_managers, num_of_engineeries, num_of_researchers;
+    bool flag= true;
+    int counter;
 
-      string nameUniversity;
-      string disertation; //темата на дисертацията
-  public:
-      Researchers(){nameUniversity="NBU";disertation="Information Tehnology";};
-      Researchers(string firstName, string lastName, double salary);
+    while (flag) {
+        cout<<"How many employees you have?";
+        cin>>num_of_employees;
+    }
 
-      int getNameUniversity();
-      void setNameUniversity(string nameUniversity);
-      string getDisertation();
-      void setDisertation(string disertation);
-      void Print();
 
-  };
-  int main(){
 
-  }
-  Employee::Employee(string firstName, string lastName, double salary){
-    this-> firstName=firstName;
-    this-> lastName=lastName;
-    this->salary=salary;
-
-  }
-  string Employee::get_name(){
-    return firstName+" "+ lastName;
-  }
-  void Employee::set_name(string firstName, string lastName){
-    this-> firstName=firstName;
-    this-> lastName=lastName;
-  }
-
-  double Employee::getSalary(){
-    return salary;
-  }
-  void Employee::setSalary(double salary){
-    this-> salary=salary;
-  }
-  void Employee::Print(){
-    cout<<"Employee: "<<get_name()<<" with salary of "<<getSalary()<<"."<<endl;
-  }
-  Manager::Manager(string firstName, string lastName, double salary){
-    this->numberOfMeetings=numberOfMeetings;
-    this->paidLeaving=paidLeaving;
-  }
-  int Manager::getNumberOfMeetings(){
-    return numberOfMeetings;
-  }
-  void Manager::setNumberOfMeetings(int numberOfMeetings){
-    this->numberOfMeetings=numberOfMeetings;
-
-  }
-  int Manager::getPaidLeaving(){
-    return paidLeaving;
-  }
-  void Manager::setPaidLeaving(int paidLeaving){
-    this->paidLeaving=paidLeaving;
-
-  }
+}
